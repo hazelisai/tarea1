@@ -26,7 +26,7 @@ class PacienteService {
                 """
                     SELECT
                         p.id as id,
-                        p.nombres || p.apellidos as nombrecompleto,
+                        p.nombres ||' '||p.apellidos as nombrecompleto,
                         p.sexo as sexo,
                         p.email as email
 
@@ -55,7 +55,8 @@ class PacienteService {
             where_sql +=
                     """
                         AND (
-                            UPPER(nombrecompleto) LIKE UPPER('%${searchValue}%') OR
+                            UPPER(p.nombres) LIKE UPPER('%${searchValue}%') OR
+                            UPPER(p.apellidos) LIKE UPPER('%${searchValue}%') OR
                             UPPER(p.sexo) LIKE UPPER('%${searchValue}%') OR
                             UPPER(p.email) LIKE UPPER('%${searchValue}%')
 

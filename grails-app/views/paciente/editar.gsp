@@ -10,12 +10,11 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Nuevo paciente</h1>
+        <h1>Editar paciente</h1>
     </div>
 
-    <g:form controller="paciente" action="save" name="paciente_form" class="form-horizontal">
+    <g:form controller="paciente" action="update" id="${paciente?.id}" name="paciente_form" class="form-horizontal">
         <g:render template="form"/>
-
         <div class="form-group">
             <div class="pull-right">
                 <g:link controller="paciente" action="list" class="btn btn-warning" role="button"><i class="glyphicon glyphicon-remove"></i> Cancelar</g:link>
@@ -24,7 +23,6 @@
         </div>
     </g:form>
 </div>
-
 <script>
 
     var $form = $('#paciente_form');
@@ -46,6 +44,5 @@
         this.value = this.value.toLocaleUpperCase();
     });
 </script>
-
 </body>
 </html>

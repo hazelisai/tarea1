@@ -17,7 +17,7 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <a href="${createLink(controller: 'paciente',action: 'create')}" class="btn btn-primary pull-right" role="button">Nuevo paciente</a>
+            <a href="${createLink(controller: 'paciente',action: 'create')}" class="btn btn-primary pull-right" role="button"><i class="glyphicon glyphicon-plus-sign"></i> Nuevo paciente</a>
         </div>
     </div>
 
@@ -52,9 +52,9 @@
                         var $div = $('<div>');
 
                         var $editar = $('<a>', {
-                            'href': CONTEXT_ROOT + '/paciente/edit/' + data,
-                            'class': 'btn btn-warning',
-                            'text': 'Editar',
+                            'href': CONTEXT_ROOT + '/paciente/detalles/' + data,
+                            'class': 'btn btn-info',
+                            'text': 'Ver',
                             'role': 'button'
                         });
 
